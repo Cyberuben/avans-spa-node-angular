@@ -1,0 +1,12 @@
+<a 
+	href="#" [routerLink]="['/werknemers', employee.id]"
+	class="list-group-item clearfix">
+	<div class="pull-left">
+		<h4 class="list-group-item-heading">{{ employee.name }}</h4>
+		<small class="visible-xs">{{ employee.email }}</small>
+		<p class="list-group-item-text">#{{ employee.registration }}</p>
+	</div>
+	<div class="pull-right hidden-xs">
+		<small>{{ employee.email }}</small>
+	</div>
+</a>

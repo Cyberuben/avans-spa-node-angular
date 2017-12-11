@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-xs-12">
+		<button class="btn btn-success">Nieuwe werknemer</button>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-12">
+		<app-employees-list-item
+			*ngFor="let employee of employees"
+			[employee]="employee">
+		</app-employees-list-item>
+	</div>
+</div>

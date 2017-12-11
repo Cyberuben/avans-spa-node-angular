@@ -1,0 +1,349 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Noti",
+				"Notifications"
+			],
+			[
+				"Post",
+				"PostgresLogTransport"
+			],
+			[
+				"progress",
+				"progress"
+			],
+			[
+				"get",
+				"getCards"
+			],
+			[
+				"refreshToken",
+				"refreshToken"
+			],
+			[
+				"stigros",
+				"stigroscategorien"
+			],
+			[
+				"li",
+				"li\tTag"
+			],
+			[
+				"resize",
+				"resizeElements"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 228.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 496.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Z/var/www/avans-spa"
+	],
+	"file_history":
+	[
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/server-element/server-element.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/server-element/server-element.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/cockpit/cockpit.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/app.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/cockpit/cockpit.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/server-element/server-element.component.css",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/app.component.css",
+		"/Z/root/Projects/Avans/2.2/Javascript/cmp-databinding-start/src/app/app.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/server/server.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/server/server.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/servers/servers.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/recipes/recipe-detail/recipe-detail.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/servers/servers.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/.angular-cli.json",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/app.module.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/header/header.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/header/header.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/recipes/recipe-list/recipe-list.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/recipes/recipe.model.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/app.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/shopping-list/shopping-list.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/shopping-list/shopping-edit/shopping-edit.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/shopping-list/shopping-list.component.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/shared/ingredient.model.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/recipes/recipes.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/course-project/src/app/recipes/recipe-list/recipe-list.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/app.component.css",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/app.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/src/app/app.module.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/my-first-app/.angular-cli.json",
+		"/Z/root/Projects/Avans/2.2/Javascript/src/app/app.module.ts",
+		"/Z/root/Projects/Avans/2.2/Javascript/src/app/app.component.html",
+		"/Z/root/Projects/Avans/2.2/Javascript/src/app/app.component.ts",
+		"/Z/var/www/willibrordus/app/Text.php",
+		"/Z/var/www/willibrordus/resources/views/pages/other/mentions.blade.php",
+		"/Z/var/www/willibrordus/app/Group.php",
+		"/Z/var/www/willibrordus/resources/views/admin/users/edit.blade.php",
+		"/Z/var/www/willibrordus/app/User.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/UsersController.php",
+		"/Z/var/www/willibrordus/routes/web.php",
+		"/Z/var/www/willibrordus/database/migrations/2017_11_03_144421_remove_user_groups_table.php",
+		"/Z/var/www/willibrordus/database/migrations/2017_11_03_144533_remove_user_columns.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/TextGroupsController.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/GroupsController.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/DownloadsController.php",
+		"/Z/var/www/willibrordus/config/constants.php",
+		"/Z/var/www/willibrordus/database/migrations/2017_10_31_133816_create_images_table.php",
+		"/Z/var/www/willibrordus/resources/views/layouts/admin.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/images/edit.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/images/delete.blade.php",
+		"/Z/var/www/willibrordus/public/js/styles.js",
+		"/Z/var/www/willibrordus/public/js/plugins/image/dialogs/image.js",
+		"/Z/var/www/willibrordus/public/css/admin.css",
+		"/Z/var/www/willibrordus/resources/views/admin/images.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/ImagesController.php",
+		"/Z/var/www/willibrordus/public/css/frontend.css",
+		"/C/Users/Ruben/AppData/Local/Temp/scp34509/logs/proxy_error_log",
+		"/Z/var/www/willibrordus/resources/views/layouts/frontend.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Middleware/HeaderImages.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/PageController.php",
+		"/Z/var/www/willibrordus/resources/views/admin/orders/details.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/PortraitsController.php",
+		"/Z/var/www/willibrordus/resources/views/pages/actueel/news.blade.php",
+		"/Z/var/www/willibrordus/resources/views/pages/portraits/single.blade.php",
+		"/Z/var/www/willibrordus/resources/views/pages/actueel/article-single.blade.php",
+		"/Z/var/www/willibrordus/resources/views/pages/portraits/list.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/NewsController.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/PortraitsController.php",
+		"/Z/var/www/willibrordus/resources/views/admin/portraits.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/portraits/edit.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/portraits/delete.blade.php",
+		"/Z/var/www/willibrordus/resources/views/mensen.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/orders/delete.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/ArticlesController.php",
+		"/Z/var/www/willibrordus/database/migrations/2017_05_13_190334_create_portraits_table.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/MentionsController.php",
+		"/Z/var/www/willibrordus/app/Article.php",
+		"/Z/var/www/willibrordus/app/Portrait.php",
+		"/Z/var/www/willibrordus/resources/views/admin/orders.blade.php",
+		"/Z/var/www/willibrordus/app/Candle.php",
+		"/Z/var/www/willibrordus/app/Mention.php",
+		"/Z/var/www/willibrordus/app/Church.php",
+		"/Z/var/www/willibrordus/resources/views/admin/mentions.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/candles.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/mentions/this-week.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/mentions/delete.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/articles/delete.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/candles/delete.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/OrdersController.php",
+		"/Z/var/www/willibrordus/app/Providers/AppServiceProvider.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/CandlesController.php",
+		"/Z/var/www/willibrordus/resources/views/admin/users/delete.blade.php",
+		"/Z/var/www/willibrordus/app/OrderRow.php",
+		"/C/Users/Ruben/AppData/Local/Temp/scp37942/.env",
+		"/C/Users/Ruben/AppData/Local/Temp/scp39834/httpdocs/sponsoren/sponsoren_invoertool.php",
+		"/Z/var/www/willibrordus/resources/views/admin/users.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/articles/edit.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/downloads/delete.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/downloads/edit.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/groups/delete.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/groups/edit.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/groups/users.blade.php",
+		"/Z/var/www/willibrordus/app/Order.php",
+		"/Z/var/www/gracelandtours/views/admin/journeys/editPackage.html",
+		"/Z/var/www/willibrordus/app/Listeners/LogSuccessfulLogin.php",
+		"/Z/var/www/willibrordus/app/Providers/EventServiceProvider.php",
+		"/Z/var/www/gracelandtours/views/admin/journeys/editHotel.html",
+		"/Z/var/www/willibrordus/config/app.php",
+		"/Z/var/www/willibrordus/app/Http/Kernel.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/KatholiekController.php",
+		"/Z/var/www/willibrordus/resources/views/textpage.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/groups.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/OrdersController.php",
+		"/Z/var/www/willibrordus/database/migrations/2017_04_14_175615_create_users_table.php",
+		"/Z/var/www/willibrordus/resources/views/textpage-groups.blade.php",
+		"/Z/var/www/willibrordus/resources/views/admin/texts.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/FinanceController.php",
+		"/Z/var/www/willibrordus/resources/views/katholiek.blade.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/MensenController.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Admin/TextsController.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/MentionsController.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/TextsController.php",
+		"/Z/var/www/willibrordus/database/migrations/2017_05_04_190316_texts_add_group_config.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/TextGroupsController.php",
+		"/Z/var/www/willibrordus/resources/lang/nl/validation.php",
+		"/Z/var/www/willibrordus/app/Http/Controllers/Pages/DownloadsController.php",
+		"/Z/var/www/willibrordus/resources/views/pages/downloads/parochiebladen.blade.php",
+		"/Z/var/www/willibrordus/resources/views/downloads.blade.php"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 67.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Avans-SPA.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Z:\\var\\www\\huizenier2\\Huizenier2.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 414.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
