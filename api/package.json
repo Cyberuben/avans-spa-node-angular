@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API for Avans SPA project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Cyberuben/avans-spa-node-angular.git"
+  },
+  "author": "Ruben Rutten <ruben@rubenrutten.nl>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyberuben/avans-spa-node-angular/issues"
+  },
+  "homepage": "https://github.com/Cyberuben/avans-spa-node-angular#readme",
+  "dependencies": {
+    "argon2": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.6",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
