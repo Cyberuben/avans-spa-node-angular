@@ -4,8 +4,8 @@
   "description": "Node.js server and angular application",
   "main": "api/index.js",
   "scripts": {
-    "build": "cd frontend && npm install && cd ../api && npm install && cd ..",
-    "start": "node api/index.js"
+    "start": "node api/index.js",
+    "postinstall": "cd frontend && npm install && cd ../api && npm install && cd .."
   },
   "repository": {
     "type": "git",
