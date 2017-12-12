@@ -18,5 +18,9 @@
     "server"
   ],
   "author": "Ruben Rutten <ruben@rubenrutten.nl>",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "8.1.2",
+    "npm": "5.5.1"
+  }
 }
