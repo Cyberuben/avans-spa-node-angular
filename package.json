@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Node.js server and angular application",
+  "main": "api/index.js",
+  "scripts": {
+    "build": "cd frontend && npm install && ng build && cd ../api && npm install && cd ..",
+    "start": "cd api && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyberuben/avans-spa-node-angular.git"
+  },
+  "keywords": [
+    "node",
+    "mongodb",
+    "mongoose",
+    "server"
+  ],
+  "author": "Ruben Rutten <ruben@rubenrutten.nl>",
+  "license": "ISC"
+}
