@@ -4,7 +4,7 @@
   "description": "Node.js server and angular application",
   "main": "api/index.js",
   "scripts": {
-    "build": "cd frontend && npm install && ng build && cd ../api && npm install && cd ..",
+    "build": "cd frontend && npm install && node_modules/.bin/ng build && cd ../api && npm install && cd ..",
     "start": "cd api && node index.js"
   },
   "repository": {
