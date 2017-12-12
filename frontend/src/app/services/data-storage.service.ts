@@ -7,7 +7,7 @@ import { BaseModel } from "../models/base.model";
 import { Employee } from "../models/employee.model";
 
 export class DataStorageService<T extends BaseModel> {
-	baseUrl = "http://10.1.0.1:4100/api/";
+	baseUrl = "/api/";
 	resourceKey: string;
 
 	constructor(private httpClient: HttpClient, resourceKey: string) {
