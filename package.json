@@ -4,8 +4,8 @@
   "description": "Node.js server and angular application",
   "main": "api/index.js",
   "scripts": {
-    "build": "cd frontend && npm install && node_modules/.bin/ng build && cd ../api && npm install && cd ..",
-    "start": "cd api && node index.js"
+    "build": "cd frontend && npm install && cd ../api && npm install && cd ..",
+    "start": "node api/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,6 @@
   "engines": {
     "node": "8.1.2",
     "npm": "5.5.1"
-  }
+  },
+  "cacheDirectories": ["api/node_modules", "frontend/node_modules"]
 }
