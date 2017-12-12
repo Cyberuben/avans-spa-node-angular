@@ -23,5 +23,5 @@
     "node": "8.1.2",
     "npm": "5.5.1"
   },
-  "cacheDirectories": ["app/api/node_modules", "app/frontend/node_modules", "app/api/.npm", "app/frontend/.npm"]
+  "cacheDirectories": ["app/api/node_modules", "app/frontend/node_modules", "app/api/.npm", "app/frontend/.npm", ".npm"]
 }
