@@ -1,4 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
@@ -16,6 +17,12 @@ import { EmployeesListItemComponent } from "./employees/employees-list/employees
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { AppRoutingModule } from "./app-routing.module";
+import { SkillsListComponent } from './skills/skills-list/skills-list.component';
+import { SkillsListItemComponent } from './skills/skills-list/skills-list-item/skills-list-item.component';
+import { DiplomasListComponent } from './diplomas/diplomas-list/diplomas-list.component';
+import { DiplomasListItemComponent } from './diplomas/diplomas-list/diplomas-list-item/diplomas-list-item.component';
+import { DiplomaDetailComponent } from './diplomas/diploma-detail/diploma-detail.component';
+import { SkillDetailComponent } from './skills/skill-detail/skill-detail.component';
 
 @NgModule({
 	declarations: [
@@ -28,12 +35,19 @@ import { AppRoutingModule } from "./app-routing.module";
 		EmployeesListComponent,
 		EmployeeDetailsComponent,
 		EmployeesListItemComponent,
-		NotFoundComponent
+		NotFoundComponent,
+		SkillsListComponent,
+		SkillsListItemComponent,
+		DiplomasListComponent,
+		DiplomasListItemComponent,
+		DiplomaDetailComponent,
+		SkillDetailComponent
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
-		AppRoutingModule
+		AppRoutingModule,
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

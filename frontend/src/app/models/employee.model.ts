@@ -5,11 +5,9 @@ export class Employee extends BaseModel {
 	public email: string;
 	public registration: number;
 
-	constructor(name: string, email: string, registration: number) {
+	static resourceKey = "employees";
+
+	constructor() {
 		super();
-		
-		this.name = name;
-		this.email = email;
-		this.registration = registration;
 	}
 }

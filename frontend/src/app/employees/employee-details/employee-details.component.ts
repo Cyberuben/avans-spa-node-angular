@@ -10,7 +10,7 @@ import { EmployeesService } from "../../services/employees.service";
 	styleUrls: ['./employee-details.component.css']
 })
 export class EmployeeDetailsComponent implements OnInit {
-	employee: Employee;
+	employee = new Employee();
 
 	canEdit = false;
 
@@ -21,14 +21,14 @@ export class EmployeeDetailsComponent implements OnInit {
 	ngOnInit() {
 		const id = this.route.snapshot.params.id;
 		this.employeesService.get(id)
-		.then((employee) => {
+		.subscribe((employee: Employee) => {
 			this.employee = employee;
 		});
 
 		this.route.params
 		.subscribe((params: Params) => {
 			this.employeesService.get(params.id)
-			.then((employee) => {
+			.subscribe((employee: Employee) => {
 				this.employee = employee;
 			});
 		});

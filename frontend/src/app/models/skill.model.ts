@@ -3,9 +3,9 @@ import { BaseModel } from "./base.model";
 export class Skill extends BaseModel {
 	public name: string;
 
-	constructor(name: string) {
+	static resourceKey = "skills";
+
+	constructor() {
 		super();
-		
-		this.name = name;
 	}
 }

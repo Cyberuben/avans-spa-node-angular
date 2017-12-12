@@ -5,6 +5,7 @@ var logger = require("morgan");
 const path = require("path");
 
 require("dotenv").config();
+require("./lib/db");
 
 var app = express();
 

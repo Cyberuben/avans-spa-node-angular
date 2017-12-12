@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Employee } from "../../../models/employee.model";
 import { EmployeesService } from "../../../services/employees.service";
@@ -15,9 +15,5 @@ export class EmployeesListItemComponent implements OnInit {
 
 	ngOnInit() {
 
-	}
-
-	onSelected() {
-		//this.employeesService.selectedEmployee.next(this.employee);
 	}
 }

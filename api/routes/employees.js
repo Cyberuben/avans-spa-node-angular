@@ -5,25 +5,21 @@ router.get("/", (req, res, next) => {
 	Employee.find({})
 	.sort({ name: 1 })
 	.then((employees) => {
-		res.status(200).json({
-			employees: employees
-		});
+		res.status(200).json(employees);
 	})
 	.catch(next);
 });
 
 router.post("/", (req, res, next) => {
 	const employee = new Employee({
-		name: req.body.employee,
+		name: req.body.name,
 		email: req.body.email,
 		registration: req.body.registration
 	});
 
 	employee.save()
 	.then(() => {
-		res.status(200).json({
-			employee: employee
-		});
+		res.status(200).json(employee);
 	})
 	.catch(next);
 });
@@ -35,16 +31,13 @@ router.get("/:employeeId", (req, res, next) => {
 	.then((employee) => {
 		if(!employee) {
 			res.status(404).json({
-				employee: null,
 				error: "Not found"
 			});
 
 			return;
 		}
 
-		res.status(200).json({
-			employee: employee
-		});
+		res.status(200).json(employee);
 	})
 	.catch(next);
 });
@@ -56,7 +49,6 @@ router.put("/:employeeId", (req, res, next) => {
 	.then((employee) => {
 		if(!employee) {
 			res.status(404).json({
-				employee: null,
 				error: "Not found"
 			});
 
@@ -68,9 +60,7 @@ router.put("/:employeeId", (req, res, next) => {
 		employee.set("registration", req.body.registration || employee.registration);
 		return employee.save()
 		.then(() => {
-			res.status(200).json({
-				employee: employee
-			});
+			res.status(200).json(employee);
 		});
 	})
 	.catch(next);

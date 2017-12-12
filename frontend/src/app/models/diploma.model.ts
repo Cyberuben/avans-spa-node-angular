@@ -4,10 +4,9 @@ export class Diploma extends BaseModel {
 	public name: string;
 	public type: string;
 
-	constructor(name: string, type: string) {
+	static resourceKey = "diplomas";
+
+	constructor() {
 		super();
-		
-		this.name = name;
-		this.type = type;
 	}
 }

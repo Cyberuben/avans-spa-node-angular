@@ -14,16 +14,18 @@ export class EmployeesListComponent implements OnInit {
 	employees: Employee[];
 	private subscription: Subscription;
 
-	constructor(private employeesService: EmployeesService) { }
+	constructor(private employeesService: EmployeesService) {
+		this.employees = [];
+	}
 
 	ngOnInit() {
 		this.employeesService.getAll()
-		.then((employees) => {
+		.subscribe((employees: Array<Employee>) => {
 			this.employees = employees;
 		});
 
 		this.subscription = this.employeesService.employeesChanged
-		.subscribe((employees: Employee[]) => {
+		.subscribe((employees: Array<Employee>) => {
 			this.employees = employees;
 		});
 	}

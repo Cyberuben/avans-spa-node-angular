@@ -1,53 +1,58 @@
-import { Subject } from "rxjs/Subject";
+import { Injectable } from "@angular/core";
+import { Subject } from "rxjs/Subject"
+import { HttpClient } from "@angular/common/http";
 
-import { ExternalService } from "./external.service";
+import { IResourceService } from "./resource.service";
+import { DataStorageService } from "./data-storage.service";
 
 import { Employee } from "../models/employee.model";
 
-export class EmployeesService implements ExternalService {
-	items: Employee[];
+@Injectable()
+export class EmployeesService implements IResourceService {
+	employees: Employee[];
+
+	storage: DataStorageService<Employee>;
 
 	employeesChanged = new Subject<Employee[]>();
 
-	constructor() {
-		this.items = [(new Employee("Ruben Rutten", "ruben@rubenrutten.nl", 1))];
-
-		this.items[0].id = Math.random().toString(36).slice(2);
+	constructor(private httpClient: HttpClient) {
+		this.storage = new DataStorageService<Employee>(httpClient, Employee.resourceKey);
 	}
 
 	create(employee: Employee) {
-		let id = Math.random().toString(36).slice(2);
-		employee.id = id;
-		this.items.push(employee);
-
-		this.employeesChanged.next(this.items.slice());
-
-		return Promise.resolve(employee);
+		return this.storage.create(employee);
 	}
 
 	get(id: string) {
-		for(let i = 0; i < this.items.length; i++) {
-			if(this.items[i].id == id) {
-				return Promise.resolve(this.items[i]);
-			}
-		}
+		return this.storage.get(id)
+		.map((employee: Employee) => {
+			let instance = new Employee();
+			instance.fromObject(employee);
 
-		return Promise.resolve(null);
+			return instance;
+		});
 	}
 
 	getAll() {
-		return Promise.resolve(this.items.slice());
+		return this.storage.getAll()
+		.map((data) => {
+			for(let key in data) {
+				let jsonData = data[key];
+				data[key] = new Employee();
+				data[key].fromObject(jsonData);
+			}
+
+			this.employeesChanged.next(data);
+
+			return data;
+		});
 	}
 
 	update(employee: Employee) {
-		this.employeesChanged.next(this.items.slice());
-
-		return Promise.resolve(employee);
+		return this.storage.update(employee);
 	}
 
 	remove(employee: Employee) {
-		this.employeesChanged.next(this.items.slice());
-
-		return Promise.resolve(employee);
+		return this.storage.remove(employee);
 	}
 }
