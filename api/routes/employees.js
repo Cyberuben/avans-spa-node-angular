@@ -109,7 +109,7 @@ router.get("/:employeeId/diplomas", (req, res, next) => {
 
 		return neo4j.run(
 			`MATCH (e:Employee{id: $employeeId})-[ed:PASSED]->(d:Diploma)			
-			RETURN d.id AS diplomaId, d.name AS diplomaName, d.datePassed AS datePassed`,
+			RETURN d.id AS diplomaId, d.name AS diplomaName, ed.datePassed AS datePassed`,
 			{
 				employeeId: employee._id.toString()
 			}

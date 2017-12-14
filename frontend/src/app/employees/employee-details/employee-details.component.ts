@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
 
 import { Employee } from "../../models/employee.model";
+import { Diploma } from "../../models/diploma.model";
 import { EmployeesService } from "../../services/employees.service";
+import { DiplomasService } from "../../services/diplomas.service";
 
 @Component({
 	selector: "app-employee-details",
@@ -12,12 +15,16 @@ import { EmployeesService } from "../../services/employees.service";
 export class EmployeeDetailsComponent implements OnInit {
 	employee = new Employee();
 	diplomas: object[] = [];
+	allDiplomas: Diploma[] = [];
 
 	constructor(private employeesService: EmployeesService,
+				private diplomasService: DiplomasService,
 				private route: ActivatedRoute,
 				private router: Router) { }
 
 	ngOnInit() {
+		this.getAllDiplomas();
+
 		const id = this.route.snapshot.params.employeeId;
 		this.employeesService.get(id)
 		.subscribe((employee: Employee) => {
@@ -52,6 +59,13 @@ export class EmployeeDetailsComponent implements OnInit {
 		});
 	}
 
+	getAllDiplomas() {
+		this.diplomasService.getAll()
+		.subscribe((diplomas: Diploma[]) => {
+			this.allDiplomas = diplomas;
+		});
+	}
+
 	removeDiploma(diplomaId: string) {
 		if(confirm("Weet je zeker dat je dit diploma van deze werknemer wilt verwijderen?")) {
 			this.employeesService.removeDiploma(this.employee._id, diplomaId)
@@ -59,5 +73,17 @@ export class EmployeeDetailsComponent implements OnInit {
 				this.getDiplomas();
 			});
 		}
+	}
+
+	addDiploma(form: NgForm) {
+		const value = form.value;
+
+		this.employeesService.addDiploma(this.employee._id, {
+			id: form.value.diploma,
+			datePassed: form.value.datePassed
+		})
+		.subscribe(() => {
+			this.getDiplomas();
+		});
 	}
 }
