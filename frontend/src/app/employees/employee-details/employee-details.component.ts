@@ -11,6 +11,7 @@ import { EmployeesService } from "../../services/employees.service";
 })
 export class EmployeeDetailsComponent implements OnInit {
 	employee = new Employee();
+	diplomas: object[] = [];
 
 	constructor(private employeesService: EmployeesService,
 				private route: ActivatedRoute,
@@ -21,6 +22,7 @@ export class EmployeeDetailsComponent implements OnInit {
 		this.employeesService.get(id)
 		.subscribe((employee: Employee) => {
 			this.employee = employee;
+			this.getDiplomas();
 			this.employeesService.employeeSelected.next(this.employee);
 		});
 
@@ -29,6 +31,7 @@ export class EmployeeDetailsComponent implements OnInit {
 			this.employeesService.get(params.employeeId)
 			.subscribe((employee: Employee) => {
 				this.employee = employee;
+				this.getDiplomas();
 				this.employeesService.employeeSelected.next(this.employee);
 			});
 		});
@@ -38,6 +41,23 @@ export class EmployeeDetailsComponent implements OnInit {
 		this.employeesService.get(this.employee._id, true)
 		.subscribe((employee: Employee) => {
 			this.employee = employee;
+			this.getDiplomas();
 		});
+	}
+
+	getDiplomas() {
+		this.employeesService.getDiplomas(this.employee._id)
+		.subscribe((diplomas) => {
+			this.diplomas = diplomas;
+		});
+	}
+
+	removeDiploma(diplomaId: string) {
+		if(confirm("Weet je zeker dat je dit diploma van deze werknemer wilt verwijderen?")) {
+			this.employeesService.removeDiploma(this.employee._id, diplomaId)
+			.subscribe(() => {
+				this.getDiplomas();
+			});
+		}
 	}
 }

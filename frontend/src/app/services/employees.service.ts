@@ -73,7 +73,15 @@ export class EmployeesService implements IResourceService {
 	}
 
 	getDiplomas(id: string) {
-		return this.httpClient.get(`${environment.apiUrl}/employees/${id}/diplomas`);
+		return this.httpClient.get<object[]>(`${environment.apiUrl}/employees/${id}/diplomas`);
+	}
+
+	addDiploma(id: string, data: object) {
+		return this.httpClient.post(`${environment.apiUrl}/employees/${id}/diplomas`, data);
+	}
+
+	removeDiploma(id: string, diplomaId: string) {
+		return this.httpClient.delete(`${environment.apiUrl}/employees/${id}/diplomas/${diplomaId}`);
 	}
 
 	update(employee: Employee) {

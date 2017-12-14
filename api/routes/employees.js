@@ -109,13 +109,19 @@ router.get("/:employeeId/diplomas", (req, res, next) => {
 
 		return neo4j.run(
 			`MATCH (e:Employee{id: $employeeId})-[ed:PASSED]->(d:Diploma)			
-			RETURN d.id, d.name, d.datePassed`,
+			RETURN d.id AS diplomaId, d.name AS diplomaName, d.datePassed AS datePassed`,
 			{
 				employeeId: employee._id.toString()
 			}
 		)
 		.then((result) => {
-			res.status(200).json(result.records);
+			res.status(200).json(result.records.map((row) => {
+				var data = {};
+				row.keys.forEach((key, index) => {
+					data[key] = row._fields[index];
+				});
+				return data;
+			}));
 		});
 	})
 	.catch(next);
