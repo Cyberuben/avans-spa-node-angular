@@ -45,6 +45,8 @@ export class EmployeeDetailsComponent implements OnInit {
 	}
 
 	reloadData() {
+		this.getAllDiplomas();
+		
 		this.employeesService.get(this.employee._id, true)
 		.subscribe((employee: Employee) => {
 			this.employee = employee;

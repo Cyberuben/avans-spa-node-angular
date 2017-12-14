@@ -37,63 +37,6 @@ router.post("/", (req, res, next) => {
 	.catch(next);
 });
 
-router.get("/:employeeId", (req, res, next) => {
-	Employee.findOne({
-		_id: req.params.employeeId
-	})
-	.then((employee) => {
-		if(!employee) {
-			res.status(404).json({
-				error: "Not found"
-			});
-
-			return;
-		}
-
-		res.status(200).json(employee);
-	})
-	.catch(next);
-});
-
-router.put("/:employeeId", (req, res, next) => {
-	Employee.findOne({
-		_id: req.params.employeeId
-	})
-	.then((employee) => {
-		if(!employee) {
-			res.status(404).json({
-				error: "Not found"
-			});
-
-			return;
-		}
-
-		employee.set("name", req.body.name || employee.name);
-		employee.set("email", req.body.email || employee.email);
-		employee.set("registration", req.body.registration || employee.registration);
-		return employee.save()
-		.then(() => {
-			return neo4j.run(
-				`MATCH (e:Employee)
-				WHERE e.id = $id
-				SET e.name = $name
-				SET e.email = $email
-				SET e.registration = $registration`,
-				{
-					id: employee._id.toString(),
-					name: employee.name,
-					email: employee.email,
-					registration: employee.registration
-				}
-			)
-			.then(() => {
-				res.status(200).json(employee);
-			});
-		});
-	})
-	.catch(next);
-});
-
 router.get("/:employeeId/diplomas", (req, res, next) => {
 	Employee.findOne({
 		_id: req.params.employeeId
@@ -188,7 +131,7 @@ router.delete("/:employeeId/diplomas/:diplomaId", (req, res, next) => {
 	.catch(next);
 });
 
-router.get("/:employeeId/diplomas", (req, res, next) => {
+router.get("/:employeeId/skills", (req, res, next) => {
 	Employee.findOne({
 		_id: req.params.employeeId
 	})
@@ -203,13 +146,76 @@ router.get("/:employeeId/diplomas", (req, res, next) => {
 
 		return neo4j.run(
 			`MATCH (e:Employee{id: $employeeId})-[ed:PASSED]->(d:Diploma)-[ds:GRANTS]->(s:Skill)		
-			RETURN s.name, d.name, MIN(ed.datePassed)`,
+			RETURN DISTINCT s.name AS skillName, d.name AS diplomaName, d.id AS diplomaId`,
 			{
 				employeeId: employee._id.toString()
 			}
 		)
 		.then((result) => {
-			res.status(200).json(result.records);
+			res.status(200).json(result.records.map((row) => {
+				var data = {};
+				row.keys.forEach((key, index) => {
+					data[key] = row._fields[index];
+				});
+				return data;
+			}));
+		});
+	})
+	.catch(next);
+});
+
+router.get("/:employeeId", (req, res, next) => {
+	Employee.findOne({
+		_id: req.params.employeeId
+	})
+	.then((employee) => {
+		if(!employee) {
+			res.status(404).json({
+				error: "Not found"
+			});
+
+			return;
+		}
+
+		res.status(200).json(employee);
+	})
+	.catch(next);
+});
+
+router.put("/:employeeId", (req, res, next) => {
+	Employee.findOne({
+		_id: req.params.employeeId
+	})
+	.then((employee) => {
+		if(!employee) {
+			res.status(404).json({
+				error: "Not found"
+			});
+
+			return;
+		}
+
+		employee.set("name", req.body.name || employee.name);
+		employee.set("email", req.body.email || employee.email);
+		employee.set("registration", req.body.registration || employee.registration);
+		return employee.save()
+		.then(() => {
+			return neo4j.run(
+				`MATCH (e:Employee)
+				WHERE e.id = $id
+				SET e.name = $name
+				SET e.email = $email
+				SET e.registration = $registration`,
+				{
+					id: employee._id.toString(),
+					name: employee.name,
+					email: employee.email,
+					registration: employee.registration
+				}
+			)
+			.then(() => {
+				res.status(200).json(employee);
+			});
 		});
 	})
 	.catch(next);

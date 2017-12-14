@@ -7,6 +7,7 @@ import { IResourceService } from "./resource.service";
 import { DataStorageService } from "./data-storage.service";
 
 import { Diploma } from "../models/diploma.model";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class DiplomasService implements IResourceService {
@@ -69,6 +70,20 @@ export class DiplomasService implements IResourceService {
 
 			return data;
 		});
+	}
+
+	getSkills(id: string) {
+		return this.httpClient.get<object[]>(`${environment.apiUrl}/diplomas/${id}/skills`);
+	}
+
+	addSkill(id: string, skillId: string) {
+		return this.httpClient.post(`${environment.apiUrl}/diplomas/${id}/skills`, {
+			id: skillId
+		});
+	}
+
+	removeSkill(id: string, skillId: string) {
+		return this.httpClient.delete(`${environment.apiUrl}/diplomas/${id}/skills/${skillId}`);
 	}
 
 	update(diploma: Diploma) {
