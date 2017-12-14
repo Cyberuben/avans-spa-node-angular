@@ -1,0 +1,50 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h1>{{ employee._id ? employee.name : "Nieuwe medewerker" }}</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<form (ngSubmit)="onSave(f)" #f="ngForm">
+			<div class="form-group" [ngClass]="{'has-error': !name.valid && name.touched}">
+				<label for="name">Naam</label>
+				<input 
+					type="text" 
+					id="name" 
+					name="name" 
+					class="form-control" 
+					[ngModel]="employee.name"
+					required
+					#name="ngModel">
+				<span class="help-block" *ngIf="!name.valid && name.touched">Naam is onjuist</span>
+			</div>
+			<div class="form-group" [ngClass]="{'has-error': !email.valid && email.touched}">
+				<label for="email">Email adres</label>
+				<input type="email" 
+					id="email" 
+					name="email" 
+					class="form-control" 
+					[ngModel]="employee.email"
+					required
+					email
+					#email="ngModel">
+				<span class="help-block" *ngIf="!email.valid && email.touched">Email adres is onjuist</span>
+			</div>
+			<div class="form-group" [ngClass]="{'has-error': !registration.valid && registration.touched}">
+				<label for="registration">Registratie</label>
+				<input type="number"
+					id="registration" 
+					name="registration" 
+					class="form-control" 
+					[ngModel]="employee.registration"
+					required
+					pattern="^[1-9]+[0-9]*$"
+					#registration="ngModel">
+				<span class="help-block" *ngIf="!registration.valid && registration.touched">Registratie ID is onjuist</span>
+			</div>
+			<hr>
+			<button class="btn btn-success" type="submit" [disabled]="!f.valid"><i class="glyphicon glyphicon-floppy-disk"></i> Opslaan</button>
+			<button class="btn btn-danger" type="button" (click)="onDelete()" [disabled]="!employee._id"><i class="glyphicon glyphicon-trash"></i> Verwijderen</button>
+		</form>
+	</div>
+</div>

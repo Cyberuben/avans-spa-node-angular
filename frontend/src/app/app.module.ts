@@ -21,8 +21,12 @@ import { SkillsListComponent } from './skills/skills-list/skills-list.component'
 import { SkillsListItemComponent } from './skills/skills-list/skills-list-item/skills-list-item.component';
 import { DiplomasListComponent } from './diplomas/diplomas-list/diplomas-list.component';
 import { DiplomasListItemComponent } from './diplomas/diplomas-list/diplomas-list-item/diplomas-list-item.component';
-import { DiplomaDetailComponent } from './diplomas/diploma-detail/diploma-detail.component';
-import { SkillDetailComponent } from './skills/skill-detail/skill-detail.component';
+import { DiplomaDetailsComponent } from './diplomas/diploma-details/diploma-details.component';
+import { SkillDetailsComponent } from './skills/skill-details/skill-details.component';
+import { EmployeeEditComponent } from './employees/employee-edit/employee-edit.component';
+import { ActiveHighlightDirective } from './shared/active-highlight/active-highlight.directive';
+import { DiplomaEditComponent } from './diplomas/diploma-edit/diploma-edit.component';
+import { SkillEditComponent } from './skills/skill-edit/skill-edit.component';
 
 @NgModule({
 	declarations: [
@@ -40,8 +44,12 @@ import { SkillDetailComponent } from './skills/skill-detail/skill-detail.compone
 		SkillsListItemComponent,
 		DiplomasListComponent,
 		DiplomasListItemComponent,
-		DiplomaDetailComponent,
-		SkillDetailComponent
+		DiplomaDetailsComponent,
+		SkillDetailsComponent,
+		EmployeeEditComponent,
+		ActiveHighlightDirective,
+		DiplomaEditComponent,
+		SkillEditComponent
 	],
 	imports: [
 		BrowserModule,

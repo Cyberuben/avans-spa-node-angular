@@ -5,16 +5,6 @@ router.use("/diplomas", require("./diplomas"));
 router.use("/employees", require("./employees"));
 router.use("/skills", require("./skills"));
 
-router.get("/test", (req, res, next) => {
-	res.status(200).json({
-		results: [
-			"string1",
-			"string2",
-			"string3"
-		]
-	});
-})
-
 router.use((err, req, res, next) => {
 	if(err instanceof ValidationError) {
 		Object.keys(err.errors).forEach((key) => {

@@ -1,14 +1,25 @@
 <div class="row">
 	<div class="col-xs-12">
-		<button class="btn btn-success">Nieuw diploma</button>
+		<a [routerLink]="['/diplomas/nieuw']">
+			<button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Nieuw diploma</button>
+		</a>
+		<a (click)="reloadData()">
+			<button class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Herlaad data</button>
+		</a>
 	</div>
 </div>
 <hr>
 <div class="row">
 	<div class="col-xs-12">
-		<app-diplomas-list-item
-			*ngFor="let diploma of diplomas"
-			[diploma]="diploma">
-		</app-diplomas-list-item>
+		<div class="list-group">
+			<app-diplomas-list-item
+				*ngFor="let diploma of diplomas"
+				[diploma]="diploma"
+				class="list-group-item"
+				appActiveHighlight
+				[requiredValue]="diploma._id"
+				[currentValue]="selectedDiplomaId">
+			</app-diplomas-list-item>
+		</div>
 	</div>
 </div>

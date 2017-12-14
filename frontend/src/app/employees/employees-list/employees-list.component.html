@@ -1,14 +1,25 @@
 <div class="row">
 	<div class="col-xs-12">
-		<button class="btn btn-success">Nieuwe werknemer</button>
+		<a [routerLink]="['/werknemers/nieuw']">
+			<button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Nieuwe werknemer</button>
+		</a>
+		<a (click)="reloadData()">
+			<button class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Herlaad data</button>
+		</a>
 	</div>
 </div>
 <hr>
 <div class="row">
 	<div class="col-xs-12">
-		<app-employees-list-item
-			*ngFor="let employee of employees"
-			[employee]="employee">
-		</app-employees-list-item>
+		<div class="list-group">
+			<app-employees-list-item
+				*ngFor="let employee of employees"
+				[employee]="employee"
+				class="list-group-item"
+				appActiveHighlight
+				[requiredValue]="employee._id"
+				[currentValue]="selectedEmployeeId">
+			</app-employees-list-item>
+		</div>
 	</div>
 </div>

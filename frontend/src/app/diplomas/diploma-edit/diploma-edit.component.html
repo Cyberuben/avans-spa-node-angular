@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-xs-12">
+		<h1>{{ diploma._id ? diploma.name : "Nieuw diploma" }}</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<form (ngSubmit)="onSave(f)" #f="ngForm">
+			<div class="form-group" [ngClass]="{'has-error': !name.valid && name.touched}">
+				<label for="name">Naam</label>
+				<input 
+					type="text" 
+					id="name" 
+					name="name" 
+					class="form-control" 
+					[ngModel]="diploma.name"
+					required
+					#name="ngModel">
+				<span class="help-block" *ngIf="!name.valid && name.touched">Naam is onjuist</span>
+			</div>
+			<div class="form-group" [ngClass]="{'has-error': !type.valid && type.touched}">
+				<label for="type">Type</label>
+				<input type="text" 
+					id="type" 
+					name="type" 
+					class="form-control" 
+					[ngModel]="diploma.type"
+					required
+					#type="ngModel">
+				<span class="help-block" *ngIf="!type.valid && type.touched">Type is onjuist</span>
+			</div>
+			<hr>
+			<button class="btn btn-success" type="submit" [disabled]="!f.valid"><i class="glyphicon glyphicon-floppy-disk"></i> Opslaan</button>
+			<button class="btn btn-danger" type="button" (click)="onDelete()" [disabled]="!diploma._id"><i class="glyphicon glyphicon-trash"></i> Verwijderen</button>
+		</form>
+	</div>
+</div>

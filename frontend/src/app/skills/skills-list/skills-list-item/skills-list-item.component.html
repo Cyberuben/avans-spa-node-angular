@@ -1,3 +1,8 @@
-<p>
-  skills-list-item works!
-</p>
+<a 
+	[routerLink]="['/vaardigheden', skill._id]"
+	class="clearfix"
+	style="cursor: pointer;">
+	<div class="pull-left">
+		<h4 class="list-group-item-heading">{{ skill.name }}</h4>
+	</div>
+</a>

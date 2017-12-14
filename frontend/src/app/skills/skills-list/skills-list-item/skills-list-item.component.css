@@ -1,0 +1,7 @@
+:host a {
+	color: #555;
+}
+
+:host.active a {
+	color: #ffffff;
+}

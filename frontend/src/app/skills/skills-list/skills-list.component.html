@@ -1,3 +1,25 @@
-<p>
-  skills-list works!
-</p>
+<div class="row">
+	<div class="col-xs-12">
+		<a [routerLink]="['/vaardigheden/nieuw']">
+			<button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Nieuwe vaardigheid</button>
+		</a>
+		<a (click)="reloadData()">
+			<button class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Herlaad data</button>
+		</a>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="list-group">
+			<app-skills-list-item
+				*ngFor="let skill of skills"
+				[skill]="skill"
+				class="list-group-item"
+				appActiveHighlight
+				[requiredValue]="skill._id"
+				[currentValue]="selectedSkillId">
+			</app-skills-list-item>
+		</div>
+	</div>
+</div>
