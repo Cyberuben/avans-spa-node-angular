@@ -16,6 +16,7 @@ export class EmployeeDetailsComponent implements OnInit {
 	employee = new Employee();
 	diplomas: object[] = [];
 	allDiplomas: Diploma[] = [];
+	skills: object[] = [];
 
 	constructor(private employeesService: EmployeesService,
 				private diplomasService: DiplomasService,
@@ -46,7 +47,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
 	reloadData() {
 		this.getAllDiplomas();
-		
+
 		this.employeesService.get(this.employee._id, true)
 		.subscribe((employee: Employee) => {
 			this.employee = employee;
@@ -58,6 +59,11 @@ export class EmployeeDetailsComponent implements OnInit {
 		this.employeesService.getDiplomas(this.employee._id)
 		.subscribe((diplomas) => {
 			this.diplomas = diplomas;
+
+			this.employeesService.getSkills(this.employee._id)
+			.subscribe((skills) => {
+				this.skills = skills;
+			});
 		});
 	}
 
