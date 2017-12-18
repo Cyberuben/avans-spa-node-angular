@@ -15,7 +15,7 @@ export class EmployeesListComponent implements OnInit {
 	selectedEmployeeId: string;
 	private subscription: Subscription;
 	private _searchQuery: string = "";
-	private _counter = 0;
+	_counter = 0;
 
 	constructor(private employeesService: EmployeesService,
 				private router: Router) {
