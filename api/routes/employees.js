@@ -105,6 +105,16 @@ router.post("/:employeeId/diplomas", (req, res, next) => {
 				}
 			)
 			.then(() => {
+				return neo4j.run(
+					`MATCH (d:Diploma{id: $diplomaId})-[:GRANTS]->(s:Skill), (e:Employee{id: $employeeId})
+					CREATE (e)-[:HAS_SKILL{diplomaId: $diplomaId}]->(s)`,
+					{
+						diplomaId: diploma._id.toString(),
+						employeeId: employee._id.toString()
+					}
+				)
+			})
+			.then(() => {
 				res.status(200).json({
 					success: true
 				});
@@ -123,6 +133,16 @@ router.delete("/:employeeId/diplomas/:diplomaId", (req, res, next) => {
 			employeeId: req.params.employeeId
 		}
 	)
+	.then(() => {
+		return neo4j.run(
+			`MATCH (e:Employee{id: $employeeId})-[rel:HAS_SKILL{diplomaId: $diplomaId}]->(s:Skill)
+			DELETE rel`,
+			{
+				diplomaId: req.params.diplomaId,
+				employeeId: req.params.employeeId
+			}
+		);
+	})
 	.then(() => {
 		res.status(200).json({
 			success: true
@@ -145,8 +165,8 @@ router.get("/:employeeId/skills", (req, res, next) => {
 		}
 
 		return neo4j.run(
-			`MATCH (e:Employee{id: $employeeId})-[ed:PASSED]->(d:Diploma)-[ds:GRANTS]->(s:Skill)		
-			RETURN DISTINCT s.name AS skillName, d.name AS diplomaName, d.id AS diplomaId`,
+			`MATCH (e:Employee{id: $employeeId})-[es:HAS_SKILL]->(s:Skill)
+			RETURN DISTINCT s, s.name AS skillName`,
 			{
 				employeeId: employee._id.toString()
 			}

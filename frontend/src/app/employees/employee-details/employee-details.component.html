@@ -72,14 +72,12 @@
 			<thead>
 				<tr>
 					<th>Vaardigheid</th>
-					<th>Behaald door diploma</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr
 					*ngFor="let skill of skills">
 					<td>{{ skill.skillName }}</td>
-					<td><a [routerLink]="['/diplomas', skill.diplomaId]">{{ skill.diplomaName }}</a></td>
 				</tr>
 			</tbody>
 		</table>

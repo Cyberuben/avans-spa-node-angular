@@ -102,6 +102,16 @@ router.post("/:diplomaId/skills", (req, res, next) => {
 				}
 			)
 			.then(() => {
+				return neo4j.run(
+					`MATCH (e:Employee)-[:PASSED]->(d:Diploma{id: $diplomaId})
+					CREATE (e)-[:HAS_SKILL]->(:Skill{id: $skillId})`,
+					{
+						diplomaId: diploma._id.toString(),
+						skillId: skill._id.toString()
+					}
+				)
+			})
+			.then(() => {
 				res.status(200).json({
 					success: true
 				});
@@ -120,6 +130,16 @@ router.delete("/:diplomaId/skills/:skillId", (req, res, next) => {
 			skillId: req.params.skillId
 		}
 	)
+	.then(() => {
+		return neo4j.run(
+			`MATCH (e:Employee)-[rel:HAS_SKILL{diplomaId: $diplomaId}]->(s:Skill{id: $skillId})
+			DELETE rel`,
+			{
+				diplomaId: req.params.diplomaId,
+				skillId: req.params.skillId
+			}
+		)
+	})
 	.then(() => {
 		res.status(200).json({
 			success: true
@@ -193,6 +213,15 @@ router.delete("/:diplomaId", (req, res, next) => {
 				id: req.params.diplomaId
 			}
 		)
+		.then(() => {
+			return neo4j.run(
+				`MATCH (e:Employee)-[rel:HAS_SKILL{diplomaId: $diplomaId}]->(s:Skill)
+				DELETE rel`,
+				{
+					id: req.params.diplomaId
+				}
+			)
+		})
 		.then(() => {
 			res.status(200).json({
 				success: true
