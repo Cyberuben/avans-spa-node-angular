@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 	@Output() pageSelected = new EventEmitter<string>();
+	open = false;
 
 	onSelect(page: string) {
 		this.pageSelected.emit(page);

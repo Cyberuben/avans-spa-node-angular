@@ -14,10 +14,21 @@ export class EmployeesListComponent implements OnInit {
 	employees: Employee[];
 	selectedEmployeeId: string;
 	private subscription: Subscription;
+	private _searchQuery: string = "";
+	private _counter = 0;
 
 	constructor(private employeesService: EmployeesService,
 				private router: Router) {
 		this.employees = [];
+	}
+
+	get searchQuery() {
+		return this._searchQuery + " " + this._counter;
+	}
+
+	set searchQuery(newValue: string) {
+		this._searchQuery = newValue.toLowerCase().replace(" "+this._counter, "");
+		this._counter++;
 	}
 
 	ngOnInit() {

@@ -6,6 +6,19 @@
 		<a (click)="reloadData()">
 			<button class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i> Herlaad data</button>
 		</a>
+		<hr>
+	</div>
+	<div class="col-xs-12">
+		<form>
+			<div class="form-group">
+				<input type="text" name="searchQuery" class="form-control" [(ngModel)]="searchQuery" placeholder="Zoeken...">
+			</div>
+			<div class="form-group" *ngIf="searchQuery != ''">
+				<p>Zoekresultaten voor '<strong>{{ searchQuery }}</strong>'</p>
+				<hr>
+				<p><strong>0</strong> resultaten</p>
+			</div>
+		</form>
 	</div>
 </div>
 <hr>
